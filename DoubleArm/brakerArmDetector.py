@@ -65,7 +65,7 @@ def detector(image):
     edges = cv2.Canny(grayImg, threshold1, threshold2)
     lines = cv2.HoughLinesP(edges, 1, np.pi / 180, 10, minLineLength=int(rows / 25), maxLineGap=2)
     if not lines is None:
-        verticalLines = getVerticalLines(lines, 5, rows, cols)
+        verticalLines = getVerticalLines(lines, 3, rows, cols)
         # print("verticalLines: ", verticalLines)
         distanceLines = mergeWithDistance(verticalLines, 5)
         # print("distanceLines: ", distanceLines)
